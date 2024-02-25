@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<title>Portfolio</title>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Oxygen;
+}
+
+.wrapper{
+  max-width: 1920px;
+  margin: auto;
+}
+
+.main-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  background: #ff6d00;
+  z-index: 10;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 900;
+  padding: 5px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 6px;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  width: 90px;
+  height: 40px;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.nav-link:hover {
+  background: #ff9e40;
+  box-shadow: 0 0 15px 1px #c43c00;
+  font-weight: 700;
+}
+
+#welcome-section {
+  background: url("http://image.ibb.co/bUeaH7/abstract.jpg") center fixed no-repeat;
+}
+
+#about {
+  background: url("http://image.ibb.co/e4VRPn/circles.jpg") center fixed;
+}
+
+#projects {
+  background: url("http://image.ibb.co/erhjAS/shapes.jpg") center fixed;
+}
+
+#contact {
+  background: #9eff40 url("http://image.ibb.co/jogBqS/banner.jpg") no-repeat;
+  min-height: 0;
+  height: 600px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.section-content {
+  text-align: center;
+  padding: 15px;
+  background: #ff6d00;
+  box-shadow: 0 0 15px 1px #c43c00;
+  max-width: 90%;
+}
+
+h1 {
+  font-family: Rufina;
+  font-size: 2.5em;
+}
+
+.project-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: space-between;
+}
+
+.project-tile {
+  flex-basis: 250px;
+  width: 20%;
+  padding: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background: #ff6d00;
+  box-shadow: 0 0 15px #c43c00;
+  text-align: center;
+}
+
+.project-tile:hover {
+  transform: scale(1.1);
+  z-index: 9;
+}
+
+.tile-details {
+  position: relative;
+}
+
+.tile-image {
+  width: 100%;
+}
+
+.tile-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 5px;
+  background: #ff6d00;
+  z-index: -1;
+  font-weight: 700;
+}
+
+.project-tile:hover .tile-text {
+  z-index: 1;
+  opacity: .8;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.flex-parent {
+  display: flex;
+}
+
+.flex-item {
+  border: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+input, textarea {
+  display: block;
+  width: 250px;
+  max-width: 95%;
+  min-height: 30px;
+  background: #ff9e40;
+  border: none;
+  resize: none;
+  padding: 5px;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 15px 1px #c43c00;
+  outline: 0;
+}
+
+footer {
+  background: #9eff40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 600px);
+  min-height: 60px;
+}
+
+p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 620px) {
+  .flex-parent {
+    flex-direction: column;
+  }
+}
+.slide {
+	margin: 0;
+	padding: 0;
+  position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 90vh;
+	overflow-x: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.slide1 {
+	background-image: url(
+"https://media.geeksforgeeks.org/wp-content/uploads/20210812221217/pic1.png");
+}
+
+.slide2 {
+	background-image: url(
+"https://media.geeksforgeeks.org/wp-content/uploads/20210812221254/pic2.png");
+}
+
+.slide3 {
+	background-image: url(
+"https://media.geeksforgeeks.org/wp-content/uploads/20210812221322/pic3.png");
+}
+#education {
+  position: relative; /* Ensure the section is positioned relative */
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px; /* Adjust as needed */
+  color: #fff; /* Text color */
+}
+
+#arrow-left {
+  left: 0;
+  margin-left: 20px;
+}
+
+#arrow-right {
+  right: 0;
+  margin-right: 20px;
+}
+
+.hero{
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  }
+  .hero .left img{
+  width: 400px;
+  }
+  .hero .right {
+  color: var(--white);
+  margin-top: -7rem;
+  }
+  .hero .right h6{
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  }
+  .hero .right h1{
+  font-size: 4rem;
+  font-weight: 100;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  }
+  .hero .right h1 span{
+  color: var(--primary);
+  }
+  .hero .right p{
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  }
+  .flex{
+  display: flex;
+  }
+  .items-centre{
+  align-items: center;
+  }
+  .justify-between{
+  justify-content: space-between;
+  }
+  .justify-center{
+  justify-content: center;
+  }
+  .justify-right{
+  justify-content: right;
+  }
+  .btn{
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .2s ease;
+  }
+  .btn-primary{
+  background-color: var(--primary);
+  color: var(--secondary);
+  margin-top: -15rem;
+  }
+  .btn-primary:hover{
+  background: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+  }
+  .flex-1{
+  flex: 1;
+  }
+  .btn-secondary{
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+  }
+  .btn-secondary:hover{
+  background: var(--primary);
+  color: var(--secondary);
+  }
+  .certificate-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-between;
+  }
+  
+  .certificate-tile {
+    flex-basis: 250px; /* Adjust the width as needed */
+    width: calc(20% - 20px); /* Adjust the width and margin as needed */
+    margin: 10px;
+    box-sizing: border-box;
+    background: #ff6d00;
+    box-shadow: 0 0 15px #c43c00;
+    text-align: center;
+  }
+  
+  .certificate-tile:hover {
+    transform: scale(1.1);
+    z-index: 9;
+  }
+  
+  .tile-details {
+    position: relative;
+  }
+  
+  .tile-image {
+    width: 100%; /* Adjust image size as needed */
+  }
+  
+  .tile-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 5px;
+    background: #ff6d00;
+    z-index: -1;
+    font-weight: 700;
+  }
+  
+  .certificate-tile:hover .tile-text {
+    z-index: 1;
+    opacity: .8;
+  }
+    /* footer styling */
+    #footer {
+      background-color: #808080;
+      text-align: center;
+      padding: 20px 0;
+  }
+
+      /* social media icons styling */
+      .social-icons {
+        font-size: 36px;
+        cursor: pointer;
+    }
+    .fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
+        color: #008000;
+    }
+    .fab {
+        color: #000000;
+    }
+
+
+</style>
+
+<body>
+<div class="wrapper">
+  <nav class="main-nav" id="navbar">
+    <a class="home-button" href="#">Welcome to My Portfolio</a>
+    <ul class="navigation">
+      <li class="nav-item"><a class="nav-link" href="#welcome-section">Welcome</a></li>
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="welcome-section">
+  <div class="hero flex items-centre justify-between">
+    <div class="left flex-1 justify-center">
+      <img src="img2.png" style="float:left; margin-right: 1em;" alt="Profile">
+    </div>
+    <div class="right flex-1">
+    <h6>HELLO</h6>
+    <h1>It's me<br> <span>MANAVI P</span></h1>
+    <div class="social-icons mt-4">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div>
+      <button class="btn btn-secondary">
+        <a aria-label="Open Manavi P's Resume in a new tab"
+          href="https://drive.google.com/file/d/10xHHaiX43dW-Myc8_0Q8uxUHeC2kVmd0/view?usp=sharing" target="_blank"
+          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span> Resume</span></a>
+      </button>
+    </div>
+    
+    </div>
+    </div>
+  </section>
+  
+
+
+  <section id="projects">
+    <div class="section-content">
+      <h2>My education</h2>
+      <div class="project-tiles">
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="10.jpg" alt="My tribute page">
+            <p class="tile-text">Completed my 10th cbse board exam in JAIMATHA SENIOR SECONDARY SCHOOL,Uliyathaduka,KERALA securing approx 94.4 in 2021</p>
+          </div>
+          <span>MATRICULATION</span>
+        </div>
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="pu.jpg" alt="My survey page">
+            <p class="tile-text">Completed my PU board exam in Aloysius Pre University COllege,Mangalore,Karnataka securing approx 90 in 2023</p>
+          </div>
+          <span>PRE-UNIVERSITY</span>
+        </div>
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="DSU.jpg" alt="My landing page">
+            <p class="tile-text">Currently pursuing my BTech in computer science and enginerring at Dayananda Sagar University,Harohalli,Karnataka hoping to graduate by 2027</p>
+          </div>
+          <span>UNIVERSITY</span>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <section id="certificates">
+    <div class="section-content">
+      <h2>My Certificates</h2>
+      <div class="certificate-tiles">
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate1.jpg" alt="Certificate 1">
+            <p class="tile-text">completed course on soft communication by tcs ion</p>
+          </div>
+          <span><a href="certificate1_link" target="_blank">Certificate 1</a></span>
+        </div>
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate2.jpg" alt="Certificate 2">
+            <p class="tile-text">completed course on Introducing coding for beginners:html and css online course in 2020</p>
+          </div>
+          <span><a href="certificate2_link" target="_blank">Certificate 2</a></span>
+        </div>
+        <!-- Add more certificate-tile divs as needed -->
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate3.jpg" alt="Certificate 3">
+            <p class="tile-text">completed course on Agile job simulation course by JPMorgan Chase & CO in forage</p>
+          </div>
+          <span><a href="certificate3_link" target="_blank">Certificate 3</a></span>
+        </div>
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate4.jpg" alt="Certificate 4">
+            <p class="tile-text">successfully completed fullstack developer bootcamp by geeksforgeeks</p>
+          </div>
+          <span><a href="certificate4_link" target="_blank">Certificate 4 </a></span>
+        </div>
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate5.png" alt="Certificate 5">
+            <p class="tile-text">completed the "Android application development" course offered by Great Learning Academy.</p>
+          </div>
+          <span><a href="certificate5_link" target="_blank">Certificate 5 </a></span>
+        </div>
+        <div class="certificate-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="certificate6.png" alt="Certificate 6">
+            <p class="tile-text">completed the "Java Programming" course offered by Great Learning Academy.</p>
+          </div>
+          <span><a href="certificate6_link" target="_blank">Certificate 6</a></span>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="education">
+    <div id="arrow-left" class="arrow"></div>
+    <div class="slide slide1"></div>
+    <div class="slide slide2"></div>
+    <div class="slide slide3"></div>
+    <div id="arrow-right" class="arrow"></div>
+</section>
+
+
+ 
+  
+  <section id="projects">
+    <div class="section-content">
+      <h2>My projects</h2>
+      <div class="project-tiles">
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="http://image.ibb.co/e8RY4n/Tribute.png" alt="My tribute page">
+            <p class="tile-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sunt quis enim libero at provident?</p>
+          </div>
+          <span><a href="https://codepen.io/yoizfefisch/full/PKmpxm" target="_blank">Tribute Page: George Washington</a></span>
+        </div>
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="http://image.ibb.co/hgDD4n/Survey.png" alt="My survey page">
+            <p class="tile-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sunt quis enim libero at provident?</p>
+          </div>
+          <span><a href="https://codepen.io/yoizfefisch/full/gxEKJN" target="_blank">Survey Form: Rate your day</a></span>
+        </div>
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="http://image.ibb.co/fFo2x7/Landing.png" alt="My landing page">
+            <p class="tile-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sunt quis enim libero at provident?</p>
+          </div>
+          <span><a href="https://codepen.io/yoizfefisch/full/XebKOw" target="_blank">Product Landing Page: PerformDrive</a></span>
+        </div>
+        <div class="project-tile">
+          <div class="tile-details">
+            <img class="tile-image" src="http://image.ibb.co/m876Pn/Documentation.png" alt="My documentation page">
+            <p class="tile-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sunt quis enim libero at provident?</p>
+          </div>
+          <span><a href="https://codepen.io/yoizfefisch/full/yvvpXb" target="_blank">Technical Documentation: Power Query (M)</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="section-content">
+      <h2>Contact me:</h2>
+      <form action="#">
+        <div class="flex-parent">
+          <div class="flex-item">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Your full name:">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Your email address:">
+          </div>
+          <div class="flex-item">
+            <label for="comment">Comment:</label>
+            <textarea name="comment" id="comment" cols="30" rows="7"  placeholder="Your message:"></textarea>
+          </div>
+        </div>
+        <input class="nav-link" type="submit" value="Submit">
+      </form>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="container-fluid">
+        <!-- social media icons -->
+        <div class="social-icons mt-4">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.twitch.tv/" target="_blank"><i class="fab fa-twitch"></i></a>
+        </div>
+    </div>
+</footer>
+</div>
+<script>
+  let sliderImages = document.querySelectorAll(".slide"),
+	arrowLeft = document.querySelector("#arrow-left"),
+	arrowRight = document.querySelector("#arrow-right"),
+	current = 0;
+
+// Clear all images
+function reset() {
+	for (let i = 0; i < sliderImages.length; i++) {
+		sliderImages[i].style.display = "none";
+	}
+}
+
+// Initial slide
+function startSlide() {
+	reset();
+	sliderImages[0].style.display = "block";
+}
+
+// Show previous
+function slideLeft() {
+	reset();
+	sliderImages[current - 1].style.display = "block";
+	current--;
+}
+
+// Show next
+function slideRight() {
+	reset();
+	sliderImages[current + 1].style.display = "block";
+	current++;
+}
+
+// Left arrow click
+arrowLeft.addEventListener("click", function () {
+	if (current === 0) {
+		current = sliderImages.length;
+	}
+	slideLeft();
+});
+
+// Right arrow click
+arrowRight.addEventListener("click", function () {
+	if (current === sliderImages.length - 1) {
+		current = -1;
+	}
+	slideRight();
+});
+
+startSlide();
+
+
+</script>
+</body>
+</html>
