@@ -1,0 +1,208 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* General Styles */
+body {
+    background-color: #000;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #222;
+    padding: 20px;
+    border-bottom: 2px solid #555;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #F2CE7B;
+}
+
+/* Container and Timeline Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    height: auto; /* Allow container to grow with content */
+    padding: 140px 20px 20px; /* Add top padding to account for fixed header */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #555;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #333;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    color: #fff;
+    margin-bottom: 20px;
+    clear: both;
+    z-index: 1;
+}
+
+/* Ensure the first timeline item is not hidden under the header */
+.timeline-item:first-of-type {
+    margin-top: 100px; /* Adjust this value if needed */
+}
+
+.timeline-item.left {
+    float: left;
+    margin-right: 50%;
+    margin-left: 0;
+}
+
+.timeline-item.right {
+    float: right;
+    margin-left: 50%;
+    margin-right: 0;
+}
+
+.timeline-item.left::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.timeline-item.right::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.timeline-item h2 {
+    margin-top: 0;
+}
+
+.timeline-item h3 {
+    margin-top: 0;
+}
+
+.timeline-item p {
+    margin-bottom: 0;
+}
+
+.timeline-item .skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.timeline-item .skills span {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+.timeline-item {
+    animation: slide-in 1s ease-in-out;
+}
+
+.timeline-item.left {
+    animation-delay: 0.5s;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hourglass Icon Styles */
+.timeline-end-icon {
+    position: absolute;
+    bottom: 0px; /* Position below the timeline */
+    left: 50%;
+    background-color: #F2CE7B;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 45px; /* Adjust size as needed */
+    height: 45px;
+}
+
+.timeline-end-icon img {
+    width: 100%;
+    height: 100%;
+}
