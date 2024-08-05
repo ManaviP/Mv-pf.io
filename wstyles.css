@@ -37,13 +37,19 @@ header h1 a {
     font-size: 2rem;
 }
 
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 20px;
-    margin-left: auto; /* Push navigation to the right */
+    margin-left: auto; /* Push navigation to the right on desktop */
 }
 
 nav ul li {
