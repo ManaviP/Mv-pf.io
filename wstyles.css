@@ -72,7 +72,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
-    padding: 160px 20px 20px; /* Add more top padding to account for fixed header height */
+    padding: 15px 20px 20px; /* Add more top padding to account for fixed header height */
     overflow-y: auto; /* Allow vertical scrolling */
 }
 
@@ -82,6 +82,9 @@ nav ul li a:hover {
     width: 100%;
     padding: 20px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px; /* To avoid overlap with fixed header */
 }
 
 /* Timeline Line Styles */
@@ -89,7 +92,7 @@ nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 4px; /* Increased width for better visibility */
+    width: 6px; /* Increased width for better visibility */
     height: 100%;
     background-color: #555;
     transform: translateX(-50%);
@@ -99,27 +102,27 @@ nav ul li a:hover {
 /* Timeline Item Styles */
 .timeline-item {
     position: relative;
-    width: 100%; /* Full width for mobile */
+    width: calc(100% - 70px); /* Adjust width to leave space for the line */
     padding: 20px;
     border-radius: 10px;
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     color: #fff;
     margin-bottom: 20px;
-    clear: both;
     z-index: 1;
     animation: slide-in 1s ease-in-out;
+    margin-left: 70px; /* Offset to make space for the line */
 }
 
 /* Styles for Left and Right Timeline Items */
 .timeline-item.left {
-    float: left;
-    margin-right: 50%; /* Adjust to ensure proper spacing */
+    margin-left: 0; /* No margin on the left for left items */
+    margin-right: calc(70px + 20px); /* Margin on the right to space items from the line */
 }
 
 .timeline-item.right {
-    float: right;
-    margin-left: 50%; /* Adjust to ensure proper spacing */
+    margin-left: calc(70px + 20px); /* Margin on the left to space items from the line */
+    margin-right: 0; /* No margin on the right for right items */
 }
 
 .timeline-item.left::before {
@@ -128,8 +131,8 @@ nav ul li a:hover {
     top: 50%;
     left: 100%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #555;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
@@ -139,10 +142,10 @@ nav ul li a:hover {
     content: '';
     position: absolute;
     top: 50%;
-    left: -8px;
+    left: -10px;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #555;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
@@ -207,26 +210,27 @@ nav ul li a:hover {
 
     .container {
         flex-direction: column;
-        padding-top: 120px; /* Adjust padding for smaller screens */
+        padding-top: 100px; /* Adjust padding for smaller screens */
     }
 
     .timeline {
         padding: 10px;
+        margin-top: 80px; /* To avoid overlap with fixed header */
     }
 
     .timeline-line {
-        width: 3px; /* Adjusted width for mobile */
+        width: 4px; /* Adjusted width for mobile */
     }
 
     .timeline-item {
-        width: 100%;
+        width: calc(100% - 40px); /* Adjust width to leave space for the line */
         padding: 15px;
         margin: 10px 0; /* Adjusted margin */
+        margin-left: 40px; /* Adjust for mobile */
     }
 
     .timeline-item.left,
     .timeline-item.right {
-        float: none; /* Ensure full-width on mobile */
         margin: 0;
     }
 
@@ -251,6 +255,7 @@ nav ul li a:hover {
 
     .timeline-item {
         padding: 10px;
+        margin-left: 20px; /* Adjust for mobile */
     }
 
     .timeline-end-icon {
