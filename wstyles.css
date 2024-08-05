@@ -14,7 +14,7 @@ body {
 /* Header Styles */
 header {
     background-color: #222;
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
     border-bottom: 2px solid #555;
     position: fixed;
     width: 100%;
@@ -25,7 +25,7 @@ header {
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 100%; /* Changed to ensure full width */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -36,7 +36,7 @@ header {
 header h1 a {
     color: #fff;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Adjusted for better fit on mobile */
 }
 
 nav ul {
@@ -44,7 +44,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 10px; /* Reduced gap */
     flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
@@ -55,7 +55,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Adjusted font size for mobile */
     transition: color 0.3s ease;
 }
 
@@ -69,13 +69,13 @@ nav ul li a:hover {
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
     height: auto; /* Allow container to grow with content */
-    padding: 140px 20px 20px; /* Add top padding to account for fixed header */
+    padding: 100px 20px 20px; /* Adjusted top padding */
     overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .timeline {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%; /* Adjusted for full width on mobile */
     width: 100%;
     padding: 20px;
     overflow: hidden;
@@ -94,8 +94,8 @@ nav ul li a:hover {
 
 .timeline-item {
     position: relative;
-    width: 45%;
-    padding: 20px;
+    width: 90%; /* Adjusted width for better fit on mobile */
+    padding: 15px; /* Adjusted padding */
     border-radius: 10px;
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -106,84 +106,24 @@ nav ul li a:hover {
     animation: slide-in 1s ease-in-out;
 }
 
-.timeline-item.left {
-    float: left;
-    margin-right: 50%;
-    margin-left: 0;
-    animation-delay: 0.5s;
+.timeline-item.left, .timeline-item.right {
+    float: none; /* Removed float on mobile */
+    margin: 0; /* Adjusted margin */
 }
 
-.timeline-item.right {
-    float: right;
-    margin-left: 50%;
-    margin-right: 0;
+.timeline-item.left::before, .timeline-item.right::before {
+    display: none; /* Hide timeline dots on small screens */
 }
 
-.timeline-item.left::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #555;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.timeline-item.right::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #555;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.timeline-item h2, .timeline-item h3, .timeline-item p {
-    margin-top: 0;
-}
-
-.timeline-item .skills {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-.timeline-item .skills span {
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: #444;
-    color: #fff;
-}
-
-@keyframes slide-in {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Hourglass Icon Styles */
 .timeline-end-icon {
     position: absolute;
-    bottom: 0px; /* Position below the timeline */
+    bottom: -20px; /* Adjusted position to ensure visibility */
     left: 50%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
     z-index: 1;
-    width: 45px; /* Adjust size as needed */
-    height: 45px;
+    width: 35px; /* Adjusted size */
+    height: 35px;
 }
 
 .timeline-end-icon img {
@@ -194,65 +134,49 @@ nav ul li a:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 15px;
+        padding: 10px; /* Reduced padding */
     }
 
     header h1 a {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Adjusted font size for mobile */
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
+        gap: 10px; /* Reduced gap */
     }
 
     .timeline-item {
-        width: 90%;
+        width: 90%; /* Adjusted width for better fit on mobile */
         margin: 10px auto;
-    }
-
-    .timeline-item.left,
-    .timeline-item.right {
-        float: none;
-        margin: 0;
-    }
-
-    .timeline-item.left::before,
-    .timeline-item.right::before {
-        display: none; /* Hide timeline dots on small screens */
     }
 
     .timeline-end-icon {
         width: 35px;
         height: 35px;
     }
-
-    .timeline-end-icon img {
-        width: 100%;
-        height: 100%;
-    }
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 5px; /* Further reduced padding */
+    }
+
     header h1 a {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Further adjusted font size */
     }
 
     nav ul li a {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Adjusted font size for better fit */
     }
 
     .timeline-item {
-        padding: 15px;
+        padding: 15px; /* Adjusted padding for mobile */
     }
 
     .timeline-end-icon {
         width: 30px;
         height: 30px;
-    }
-
-    .timeline-end-icon img {
-        width: 100%;
-        height: 100%;
     }
 }
