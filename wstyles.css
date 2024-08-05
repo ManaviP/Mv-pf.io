@@ -29,6 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
 header h1 a {
@@ -43,6 +44,7 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
 nav ul li {
@@ -100,17 +102,14 @@ nav ul li a:hover {
     margin-bottom: 20px;
     clear: both;
     z-index: 1;
-}
-
-/* Ensure the first timeline item is not hidden under the header */
-.timeline-item:first-of-type {
-    margin-top: 100px; /* Adjust this value if needed */
+    animation: slide-in 1s ease-in-out;
 }
 
 .timeline-item.left {
     float: left;
     margin-right: 50%;
     margin-left: 0;
+    animation-delay: 0.5s;
 }
 
 .timeline-item.right {
@@ -145,16 +144,8 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.timeline-item h2 {
+.timeline-item h2, .timeline-item h3, .timeline-item p {
     margin-top: 0;
-}
-
-.timeline-item h3 {
-    margin-top: 0;
-}
-
-.timeline-item p {
-    margin-bottom: 0;
 }
 
 .timeline-item .skills {
@@ -169,14 +160,6 @@ nav ul li a:hover {
     border-radius: 5px;
     background-color: #444;
     color: #fff;
-}
-
-.timeline-item {
-    animation: slide-in 1s ease-in-out;
-}
-
-.timeline-item.left {
-    animation-delay: 0.5s;
 }
 
 @keyframes slide-in {
@@ -205,4 +188,70 @@ nav ul li a:hover {
 .timeline-end-icon img {
     width: 100%;
     height: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 a {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        float: none;
+        margin: 0;
+    }
+
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+        display: none; /* Hide timeline dots on small screens */
+    }
+
+    .timeline-end-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .timeline-end-icon img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 a {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        padding: 15px;
+    }
+
+    .timeline-end-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline-end-icon img {
+        width: 100%;
+        height: 100%;
+    }
 }
