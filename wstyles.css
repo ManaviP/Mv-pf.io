@@ -192,7 +192,7 @@ nav ul li.active a {
     .timeline-end-icon {
         width: 35px;
         height: 35px;
-        bottom: -25px; /* Adjusted for mobile */
+        bottom: -1px; /* Adjusted for mobile */
     }
 }
 
@@ -200,7 +200,7 @@ nav ul li.active a {
     .timeline-end-icon {
         width: 30px;
         height: 30px;
-        bottom: -20px; /* Adjusted for mobile */
+        bottom: -1px; /* Adjusted for mobile */
     }
 }
 
