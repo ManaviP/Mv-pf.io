@@ -403,8 +403,8 @@ footer {
 
 /* Video Styling */
 #splashVideo {
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
   object-fit: cover; /* Ensures video covers the screen */
 }
 
