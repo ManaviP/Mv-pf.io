@@ -1,0 +1,515 @@
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  background-color: #222;
+  padding: 20px;
+  border-bottom: 2px solid #555;
+}
+
+header .hcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+  color: #F2CE7B;;
+}
+
+
+
+main {
+  padding: 20px 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 450px; /* Adjust the size as needed */
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.social-icons {
+  margin-top: 20px; /* Space above social icons */
+}
+
+.social-icons a {
+  color: #fff; /* White color for icons */
+  text-decoration: none; /* Remove underline */
+  font-size: 2rem; /* Size of the icons */
+  margin: 0 10px; /* Space between icons */
+}
+
+.social-icons a:hover {
+  color: #f39c12; /* Hover color for icons */
+}
+
+.skill-wrapper {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  transition: box-shadow 0.3s ease-in-out;
+  text-align: center; /* Center content inside the wrapper */
+}
+
+.skill-wrapper:hover {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
+}
+
+.skill {
+  width: 100%;
+  margin-top: 60px; /* Add space between social icons and skill section */
+}
+
+.header {
+  background-color: #282c34;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #444;
+  margin-bottom: 40px; /* Space between header and skill cards */
+  display: inline-block; /* Center align the header */
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-card {
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative; /* To position the glow effect */
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-card:hover::before {
+  opacity: 1; /* Show glow effect on hover */
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Light illumination effect */
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.skill-card h4 {
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-links a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* Overall Card Styling */
+.card-wrapper {
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.card-wrapper:hover {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
+}
+
+/* Skills Section Styling */
+.skills-card-wrapper {
+  width: 100%;
+  text-align: center; /* Center align content */
+}
+
+.skills-card-wrapper .header h2 {
+  margin: 0;
+}
+
+/* What I Do Section Styling */
+/* What I Do Section Styling */
+/* What I Do Section Styling */
+.what-i-do-card-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.what-i-do-card-wrapper .header {
+  margin-bottom: 20px;
+}
+
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Content Card Styles */
+.content-card {
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+  animation: fadeInUp 0.6s forwards; /* Animation effect */
+}
+
+.content-card-image {
+  flex: 1;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(-100px); /* Start from left for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card-image img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+.content-card-text {
+  flex: 2;
+  text-align: left; /* Align text to the left */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card h3 {
+  margin-top: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.icon img {
+  width: 28px;
+  height: auto;
+}
+
+.description p {
+  margin: 5px 0;
+}
+
+/* Animation for text sliding in from the right */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* Apply animations 
+.content-card-image {
+  animation: slideInFromLeft 0.6s forwards;
+}*/
+
+.content-card-text {
+  animation: slideInFromRight 0.6s forwards;
+}
+/* What I Do Section Styling */
+.what-i-do-card-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.what-i-do-card-wrapper .header {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #444;
+}
+
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Content Card Styles */
+.content-card {
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+  animation: fadeInUp 0.6s forwards; /* Animation effect */
+}
+
+.content-card-image {
+  flex: 1;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(-100px); /* Start from left for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card-image img {
+  width: 240px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+.content-card-text {
+  flex: 2;
+  text-align: left; /* Align text to the left */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card h3 {
+  margin-top: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.icon img {
+  width: 34px;
+  height: auto;
+}
+
+.description p {
+  margin: 5px 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations */
+.content-card-image {
+  animation: slideInFromLeft 0.6s forwards;
+}
+
+.content-card-text {
+  animation: slideInFromRight 0.6s forwards;
+}
+
+
+/* Resume Button Styles */
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #F2CE7B;;
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #f6bd39;;
+  color: #fff;
+}
+/* Splash Screen Styling */
+/* Splash Screen Styling */
+.splash-screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Ensure background matches video if necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure splash screen is on top */
+  overflow: hidden; /* Prevents scrollbars */
+}
+
+/* Video Styling */
+#splashVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the screen */
+}
+
+/* Main Content Styling */
+.main-content {
+  padding: 20px;
+}
