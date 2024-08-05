@@ -1,811 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
-rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-<title>Portfolio</title>
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Oxygen;
-}
-
-.wrapper{
-  max-width: 1920px;
-  margin: auto;
-}
-
-.main-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  background: #dcd2cd;
-  z-index: 10;
-}
-
-.home-button {
-  display: flex;
-  align-items: center;
-  color: black;
-  text-decoration: none;
-  font-size: 1.5em;
-  font-weight: 900;
-  padding: 5px;
-}
-
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin: 6px;
-  padding: 0;
-}
-
-.nav-link {
-  display: flex;
-  width: 90px;
-  height: 40px;
-  border-radius: 8px;
-  color: black;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
-.nav-link:hover {
-  background: #dcd2cd;
-  box-shadow: 0 0 15px 1px #615956;
-  font-weight: 700;
-}
-
-#welcome-section {
-  background:  center fixed no-repeat;
-}
-
-#about {
-  background: url("http://image.ibb.co/e4VRPn/circles.jpg") center fixed;
-}
-
-#projects {
-  background: url("http://image.ibb.co/erhjAS/shapes.jpg") center fixed;
-}
-
-#contact {
-  background: #9eff40 url("http://image.ibb.co/jogBqS/banner.jpg") no-repeat;
-  min-height: 0;
-  height: 600px;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-.section-content {
-  text-align: center;
-  padding: 15px;
-  background: #615956;
-  box-shadow: 0 0 15px 1px #615956;
-  max-width: 90%;
-}
-
-h1 {
-  font-family: Rufina;
-  font-size: 2.5em;
-}
-
-.project-tiles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: space-between;
-}
-
-.project-tile {
-  flex-basis: 250px;
-  width: 20%;
-  padding: 5px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  background: #615956;
-  box-shadow: 0 0 15px #615956;
-  text-align: center;
-}
-
-.project-tile:hover {
-  transform: scale(1.1);
-  z-index: 9;
-}
-
-.tile-details {
-  position: relative;
-}
-
-.tile-image {
-  width: 100%;
-}
-
-.tile-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  padding: 5px;
-  background: #615956;
-  z-index: -1;
-  font-weight: 700;
-}
-
-.project-tile:hover .tile-text {
-  z-index: 1;
-  opacity: .8;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  font-family: inherit;
-}
-
-.flex-parent {
-  display: flex;
-}
-
-.flex-item {
-  border: none;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-}
-
-input, textarea {
-  display: block;
-  width: 250px;
-  max-width: 95%;
-  min-height: 30px;
-  background: #615956;
-  border: none;
-  resize: none;
-  padding: 5px;
-}
-
-input:focus, textarea:focus {
-  box-shadow: 0 0 15px 1px #ead8d1;
-  outline: 0;
-}
-
-footer {
-  background: #9eff40;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 600px);
-  min-height: 60px;
-}
-
-p {
-  margin: 0;
-}
-
-@media only screen and (max-width: 620px) {
-  .flex-parent {
-    flex-direction: column;
-  }
-}
-.slide {
-	margin: 0;
-	padding: 0;
-  position: relative;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 100%;
-	height: 90vh;
-	overflow-x: hidden;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-
-
-
-#education {
-  position: relative; /* Ensure the section is positioned relative */
-}
-
-.arrow {
-  cursor: pointer;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
-  background-color: rgba(16, 10, 10, 0.5); /* Semi-transparent white */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 24px; /* Adjust as needed */
-  color: #0b0909; /* Text color */
-}
-
-#arrow-left {
-  left: 0;
-  margin-left: 20px;
-}
-
-#arrow-right {
-  right: 0;
-  margin-right: 20px;
-}
-
-.hero{
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  }
-  .hero .left img{
-  width: 400px;
-  }
-  .hero .right {
-  color: var(--white);
-  margin-top: -7rem;
-  }
-  .hero .right h6{
-  font-size: 1.6rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  }
-  .hero .right h1{
-  font-size: 4rem;
-  font-weight: 100;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-  }
-  .hero .right h1 span{
-  color: var(--primary);
-  }
-  .hero .right p{
-  line-height: 1.9;
-  margin-bottom: 2rem;
-  }
-  .flex{
-  display: flex;
-  }
-  .items-centre{
-  align-items: center;
-  }
-  .justify-between{
-  justify-content: space-between;
-  }
-  .justify-center{
-  justify-content: center;
-  }
-  .justify-right{
-  justify-content: right;
-  }
-  .btn{
-  padding: 0.6rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid transparent;
-  outline: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: all .2s ease;
-  }
-  .btn-primary{
-  background-color: var(--primary);
-  color: var(--secondary);
-  margin-top: -15rem;
-  }
-  .btn-primary:hover{
-  background: transparent;
-  border-color: var(--primary);
-  color: var(--primary);
-  }
-  .flex-1{
-  flex: 1;
-  }
-  .btn-secondary{
-  background: transparent;
-  color: var(--primary);
-  border-color: var(--primary);
-  }
-  .btn-secondary:hover{
-  background: var(--primary);
-  color: var(--secondary);
-  }
-  .certificate-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: space-between;
-  }
-  
-  .certificate-tile {
-    flex-basis: 250px; /* Adjust the width as needed */
-    width: calc(20% - 20px); /* Adjust the width and margin as needed */
-    margin: 10px;
-    box-sizing: border-box;
-    background: #ff6d00;
-    box-shadow: 0 0 15px #c43c00;
-    text-align: center;
-  }
-  
-  .certificate-tile:hover {
-    transform: scale(1.1);
-    z-index: 9;
-  }
-  
-  .tile-details {
-    position: relative;
-  }
-  
-  .tile-image {
-    width: 100%; /* Adjust image size as needed */
-  }
-  
-  .tile-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: 0;
-    padding: 5px;
-    background: #ff6d00;
-    z-index: -1;
-    font-weight: 700;
-  }
-  
-  .certificate-tile:hover .tile-text {
-    z-index: 1;
-    opacity: .8;
-  }
-
-  * {margin: 0; padding: 0; outline: none;}
-
-body {
-  background: #121212;
-  font: 12px normal Arial;
-  font-family: "Raleway",Arial,Helvetica,sans-serif;
-  color:#fff;
-}
-h2 {
-  font-size: 2.7em;
-  font-weight: normal;
-  padding: 10px 0 16px 0;
-  margin: 0 0 30px;
-  text-align:center;
-  color:#2187e7;
-  text-shadow: 1px 1px 5px #000, 0 0 10px #2187e7, 0 0 20px #2187e7;
-  background:#000;
-  border-radius:2px;
-  border: 1px solid #2187e7;  
-  box-shadow: 0px 0px 50px -8px #2187e7;
-}
-h2.plataformas {
-  border: 1px solid #9ACD32;  
-  box-shadow: 0px 0px 50px -8px #9ACD32;
-  color: #9ACD32;
-  text-shadow: 1px 1px 5px #000, 0 0 10px #9ACD32, 0 0 20px #9ACD32;
-}
-
-h2.programas {
-  border: 1px solid #FF4500;  
-  box-shadow: 0px 0px 50px -8px #FF4500;
-  color: #FF4500;
-  text-shadow: 1px 1px 5px #000, 0 0 10px #FF4500, 0 0 20px #FF4500;
-}
- 
-.container {
-  width: 90%;
-  padding:5%;
-  margin: 0 auto; 
-  overflow: hidden;
-}
-
-.col {
-  width: 23%;
-  margin: 0 5%;
-  position: relative;
-  float: left;
-  font-size: 12px;
-  line-height: 2em;
-  padding: 5% 0;
-} 
-/*.col { width:101%; }*/
-.skill { 
-  list-style:none; 
-  padding-top:30px;
-}
-
-.skill li { 
-  margin-bottom:70px; 
-  background:#030303; 
-  height:6px; 
-  border-radius:3px; 
-  border-left:1px solid #111; 
-  border-top:1px solid #111; 
-  border-right:1px solid #333; 
-  border-bottom:1px solid #333;  
-}
-
-.skill li em { 
-  position:relative; 
-  font-style: normal;
-  font-size: 14px;
-  text-align: center;
-  color:#dedede;
-  top:-28px;
-}
-
-.blueline { 
-  height: 3px; 
-  margin: 2px 0; 
-  background: #2187e7; 
-  position: absolute;
-  box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.6);
-}
-.greenline { 
-  height: 3px; 
-  margin: 2px 0; 
-  background: #9ACD32; 
-  position: absolute;
-  box-shadow: 0px 0px 10px 1px rgba(173, 255, 47,0.4);
-}
-.redline { 
-  height: 3px; 
-  margin: 2px 0; 
-  background: #FF4500; 
-  position: absolute;
-  box-shadow: 0px 0px 10px 1px rgba(255, 69, 0,0.4);
-}
-
-.titulo      { opacity:1;  animation:titulo 5s ease-out;     }
-
-/*programacion*/
-.html        { width:85%;  animation:html 2s ease-out;       }
-.css         { width:80%;  animation:css 2s ease-out;        }
-.php         { width:90%;  animation:php 2s ease-out;        }
-.javascript  { width:70%;  animation:javascript 2s ease-out; }
-.jquery      { width:90%;  animation:jquery 2s ease-out;     }
-
-
-
-@keyframes titulo      { 0% { opacity:0; } 100% { opacity:1; }  }
-
-/*programacion*/
-@keyframes html        { 0% { width:0px; } 100% { width:85%; }  }
-@keyframes css         { 0% { width:0px; } 100% { width:80%; }  }
-@keyframes php         { 0% { width:0px; } 100% { width:90%; }  }
-@keyframes javascript  { 0% { width:0px; } 100% { width:70%; }  }
-@keyframes jquery      { 0% { width:0px; } 100% { width:90%; }  }
-
-
-
-/*media queries*/
-@media (max-width: 1200px){
-  h2 {font-size:2.2em;}
-}
-@media (max-width: 980px){
-  h2 {font-size:1.8em;}
-}
-@media (max-width: 767px){
-  h2 {font-size:1.4em;}
-}
-@media (max-width: 580px){
-  h2 {font-size:1.1em; padding:10px 0;}
-}
-@media (max-width: 480px){ 
-  h2 {font-size:2.2em; padding: 10px 0 15px 0;}
-  .col {width: 90%;}
-}
-    /* footer styling */
-    #footer {
-      background-color: #808080;
-      text-align: center;
-      padding: 20px 0;
-  }
-
-      /* social media icons styling */
-      .social-icons {
-        font-size: 36px;
-        cursor: pointer;
-    }
-    .fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
-        color: #008000;
-    }
-    .fab {
-        color: #000000;
-    }
-
-
-</style>
-
-<body>
-<div class="wrapper">
-  <nav class="main-nav" id="navbar">
-    <a class="home-button" href="#">Welcome to My Portfolio</a>
-    <ul class="navigation">
-      <li class="nav-item"><a class="nav-link" href="#welcome-section">Welcome</a></li>
-      <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-      <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-      <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <section id="welcome-section">
-  <div class="hero flex items-centre justify-between">
-    <div class="left flex-1 justify-center">
-      <img src="img2.png" style="float:left; margin-right: 10em; transition: transform 0.3s ease-in-out; width: 120%; /* Adjust the width as needed */
-      height: 120%;" alt="Profile" >
-    </div>
-    <div class="right flex-1">
-    <h6>HELLO</h6>
-    <h1>It's me<br> <span>MANAVI P</span></h1>
-    <p>@manavivp@gmail.com</p>
-    <div class="social-icons mt-4">
-      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div>
-      <button class="btn btn-secondary">
-        <a aria-label="Open Manavi P's Resume in a new tab"
-          href="https://drive.google.com/file/d/1eA9wMNBwMPAjYSE4AU7xy92uDC1fmoDU/view?usp=sharing" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span style="color:#808080"> Resume</span></a>
-      </button>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manavi P</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
     
-    </div>
-    </div>
-  </section>
-  
-
-
-  <section id="education">
-    <div class="section-content">
-      <h2>My education</h2>
-      <div class="project-tiles">
-        <div class="project-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="10.jpg" alt="My tribute page">
-            <p class="tile-text">Completed my 10th cbse board exam in JAIMATHA SENIOR SECONDARY SCHOOL,Uliyathaduka,KERALA securing approx 94.4 in 2021</p>
-          </div>
-          <span>MATRICULATION</span>
+<body>
+    <header>
+        <div class="hcontainer">
+            <h1><a href="#">My Portfolio</a></h1>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="work.html">Experience</a></li>
+                    <li><a href="hightlights.html">Highlights</a></li>
+                    
+                    <li ><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="project-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="pu.jpg" alt="My survey page">
-            <p class="tile-text">Completed my PU board exam in Aloysius Pre University COllege,Mangalore,Karnataka securing approx 90 in 2023</p>
-          </div>
-          <span>PRE-UNIVERSITY</span>
+    </header>
+   <!--- <div id="splashScreen" class="splash-screen">
+        <video id="splashVideo" autoplay muted playsinline>
+            <source src="path/to/your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>-->
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Hello, It's me</h2><h2>Manavi P</h2> 
+                    <p>I’m a dynamic problem-solver with a flair for crafting innovative end-to-end solutions. My passion lies in building scalable and impactful systems that make a real difference. I thrive on turning complex challenges into opportunities for positive change.</p>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/._manavi._?igsh=MWw2Nzhjc2hwd284dg==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/manavi-p-576a8b279/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/ManaviP" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="https://drive.google.com/file/d/1nvKszT1clEnbjuNjwSiv8sikzc4iKESZ/view?usp=sharing" class="resume-button" target="_blank">View Resume</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.ibb.co/0J7G38z/man.png" alt="Manavi P">
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+<div class="card-wrapper skills-card-wrapper">
+    <div class="header">
+        <h2>Skills</h2>
+    </div>
+    <div class="skill-cards">
+        <div class="skill-card">
+            <img src="https://www.mongodb.com/assets/images/global/favicon.ico" alt="MongoDB Logo">
+            <h4>MongoDB</h4>
         </div>
-        <div class="project-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="DSU.jpg" alt="My landing page">
-            <p class="tile-text">Currently pursuing my BTech in computer science and enginerring at Dayananda Sagar University,Harohalli,Karnataka hoping to graduate by 2027</p>
-          </div>
-          <span>UNIVERSITY</span>
+        <div class="skill-card">
+            <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL Logo">
+            <h4>MySQL</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git Logo">
+            <h4>Git</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="HTML Logo">
+            <h4>HTML</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS Logo">
+            <h4>CSS</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://isocpp.org/assets/images/cpp_logo.png" alt="C++ Logo">
+            <h4>C++</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo">
+            <h4>Python</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Pandas Logo">
+            <h4>Pandas</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://numpy.org/images/logo.svg" alt="NumPy Logo">
+            <h4>NumPy</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://seeklogo.com/images/M/matplotlib-logo-7676870AC0-seeklogo.com.png" alt="Matplotlib Logo">
+            <h4>Matplotlib</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" alt="Firebase Logo">
+            <h4>Firebase</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://reactjs.org/logo-180x180.png" alt="React Logo">
+            <h4>React</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://w7.pngwing.com/pngs/524/906/png-transparent-node-js-logo-nodejs-javascript-source-code-programming-development-thumbnail.png" alt="Node.js Logo">
+            <h4>Node.js</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://developer.android.com/studio/images/studio-icon.svg" alt="Android Studio Logo">
+            <h4>Android Studio</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+            <h4>GitHub</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg" alt="Flutter Logo">
+            <h4>Flutter</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://e7.pngegg.com/pngimages/805/274/png-clipart-black-and-white-pc-logo-pycharm-logo-icons-logos-emojis-tech-companies.png" alt="PyCharm Logo">
+            <h4>PyCharm</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo">
+            <h4>JavaScript</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://w7.pngwing.com/pngs/219/411/png-transparent-docker-logo-kubernetes-microservices-cloud-computing-dockers-logo-text-logo-cloud-computing-thumbnail.png" alt="Docker Logo">
+            <h4>Docker</h4>
+        </div>
+        <div class="skill-card">
+            <img src="https://e7.pngegg.com/pngimages/270/546/png-clipart-logo-organization-behance-computer-icons-design-agile-icons-blue-company-thumbnail.png" alt="Agile Logo">
+            <h4>Agile</h4>
+        </div>
+    </div>
+</div>
+
+    
+            <!-- What I Do Section -->
+<!-- What I Do Section -->
+<div class="card-wrapper what-i-do-card-wrapper">
+    <div class="header">
+        <h2>What I Do</h2>
+    </div>
+    <div class="content-cards">
+        <!-- Full Stack Website Developer Card -->
+        <div class="content-card">
+            <div class="content-card-image">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/full-stack-web-developer-4217501-3518349.png?f=webp" alt="Full stack website Developer">
+            </div>
+            <div class="content-card-text">
+                <h3>Full stack website Developer</h3>
+                <div class="icons">
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS">
+                    </div>
+                    <div class="icon">
+                        <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="HTML Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" alt="Firebase Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://w7.pngwing.com/pngs/524/906/png-transparent-node-js-logo-nodejs-javascript-source-code-programming-development-thumbnail.png" alt="Node.js Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://www.mongodb.com/assets/images/global/favicon.ico" alt="MongoDB Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://reactjs.org/logo-180x180.png" alt="React Logo">
+                    </div>
+                </div>
+                <div class="description">
+                    <p>Providing websites according to user needs</p>
+                    <p>with UI/UX meeting requirements and maintaining the latest trends is my passion</p>
+                    <p>Mostly used backend: Firebase, MongoDB</p>
+                </div>
+            </div>
         </div>
         
-      </div>
-    </div>
-  </section>
-  <section id="certificates">
-    <div class="section-content">
-      <h2>My Certificates</h2>
-      <div class="certificate-tiles">
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate1.jpg" alt="Certificate 1">
-            <p class="tile-text">completed course on soft communication by tcs ion</p>
-          </div>
-          <span><a href="certificate1_link" target="_blank">Certificate 1</a></span>
+        <!-- Mobile Application Developer Card -->
+        <div class="content-card">
+            <div class="content-card-image">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/009/300/321/small_2x/3d-illustration-of-web-development-png.png" alt="Mobile Application Developer">
+            </div>
+            <div class="content-card-text">
+                <h3>Mobile Application Developer</h3>
+                <div class="icons">
+                    <div class="icon">
+                        <img src="https://developer.android.com/studio/images/studio-icon.svg" alt="Android Studio Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://storage.googleapis.com/cms-storage-bucket/847ae81f5430402216fd.svg" alt="Flutter Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-logomark.png" alt="Firebase Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://w1.pngwing.com/pngs/715/589/png-transparent-php-logo-java-java-web-start-javaserver-pages-computer-programming-learning-tutorial-text-thumbnail.png" alt="Python Logo">
+                    </div>
+                </div>
+                <div class="description">
+                    <p>Flutter or Android Studio</p>
+                    <p>with UI/UX meeting requirements and maintaining the latest trends is my passion</p>
+                    <p>Mostly used backend: Firebase</p>
+                </div>
+            </div>
         </div>
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate2.jpg" alt="Certificate 2">
-            <p class="tile-text">completed course on Introducing coding for beginners:html and css online course in 2020</p>
-          </div>
-          <span><a href="certificate2_link" target="_blank">Certificate 2</a></span>
-        </div>
-        <!-- Add more certificate-tile divs as needed -->
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate3.jpg" alt="Certificate 3">
-            <p class="tile-text">completed course on Agile job simulation course by JPMorgan Chase & CO in forage</p>
-          </div>
-          <span><a href="certificate3_link" target="_blank">Certificate 3</a></span>
-        </div>
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate4.jpg" alt="Certificate 4">
-            <p class="tile-text">successfully completed fullstack developer bootcamp by geeksforgeeks</p>
-          </div>
-          <span><a href="certificate4_link" target="_blank">Certificate 4 </a></span>
-        </div>
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate5.png" alt="Certificate 5">
-            <p class="tile-text">completed the "Android application development" course offered by Great Learning Academy.</p>
-          </div>
-          <span><a href="certificate5_link" target="_blank">Certificate 5 </a></span>
-        </div>
-        <div class="certificate-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="certificate6.png" alt="Certificate 6">
-            <p class="tile-text">completed the "Java Programming" course offered by Great Learning Academy.</p>
-          </div>
-          <span><a href="certificate6_link" target="_blank">Certificate 6</a></span>
-        </div>
-       
-      </div>
-    </div>
-  </section>
-  
-
-  <section id="languages">
-    <div id="arrow-left" class="arrow"></div>
-    <div class="slide slide1" > <img class="tile-image" src="lan.jpg" alt="lan page"></div>
-    <div class="slide slide2" >  <img class="tile-image" src="lant.jpg" alt="lan page"></div>
-    <div id="arrow-right" class="arrow"></div>
-</section>
-
-<div class="container">
-  <div class="col">
-    <h2 class="titulo">Professional skills</h2>
-    <ul class="skill">
-      <li><span class="blueline html"></span><em>COMMUNICATION</em></li>
-      <li><span class="blueline css"></span><em>TEAM WORK</em></li>
-      <li><span class="blueline php"></span><em>CREATIVE</em></li>
-      <li><span class="blueline javascript"></span><em>PROBLEM SOLVING</em></li> 
-      <li><span class="blueline jquery"></span><em>FLEXIBILITY</em></li>
-    </ul>
-  </div>
-
- 
-  
-  <section id="projects">
-    <div class="section-content">
-      <h2>My projects</h2>
-      <div class="project-tiles">
-        <div class="project-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="P1.png" alt="project page">
-            <p class="tile-text">Working on the project JOBHAUNT, mobile application designed to simplify the job search for job
-              search process for job seekers and improve the hiring process for employers. it includes job alerts, resume upload, and in-app messaging to enhance communication
-              between job seekers and employers. I'm currently using java and Xml.</p>
-          </div>
-          <span>Mobile Application project</span>
-        </div>
-        <div class="project-tile">
-          <div class="tile-details">
-            <img class="tile-image" src="p2.png" alt="project page">
-            <p class="tile-text">Have done a mini project on Blood Blank Management System, which stores information about the
-              blood donors, receivers and the hospitals, blood banks where the blood is available. I have used PHP,
-              JavaScript, MYSQL, CSS Languages.</p>
-          </div>
-          <span>Database Management project</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact">
-    <div class="section-content">
-      <h2>Contact me:</h2>
-      <form action="#">
-        <div class="flex-parent">
-          <div class="flex-item">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" placeholder="Your full name:">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" placeholder="Your email address:">
-          </div>
-          <div class="flex-item">
-            <label for="comment">Comment:</label>
-            <textarea name="comment" id="comment" cols="30" rows="7"  placeholder="Your message:"></textarea>
-          </div>
-        </div>
-        <input class="nav-link" type="submit" value="Submit">
-      </form>
-    </div>
-  </section>
-  <footer id="footer">
-    <div class="container-fluid">
-	    <p>manavimunnuraya11@gmail.com</p>
-	    
-        <!-- social media icons -->
-        <div class="social-icons mt-4">
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.twitch.tv/" target="_blank"><i class="fab fa-twitch"></i></a>
+        
+        <!-- Data Science & AI Card -->
+        <div class="content-card">
+            <div class="content-card-image">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/woman-working-on-data-analysis-5405129-4525621.png" alt="Data Science & AI">
+            </div>
+            <div class="content-card-text">
+                <h3>Data Science & AI</h3>
+                <div class="icons">
+                    <div class="icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Pandas Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://e7.pngegg.com/pngimages/805/274/png-clipart-black-and-white-pc-logo-pycharm-logo-icons-logos-emojis-tech-companies.png" alt="PyCharm Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://seeklogo.com/images/M/matplotlib-logo-7676870AC0-seeklogo.com.png" alt="Matplotlib Logo">
+                    </div>
+                    <div class="icon">
+                        <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo">
+                    </div>
+                </div>
+                <div class="description">
+                    <p>Developing highly scalable production-ready models for various deep learning and statistical use cases</p>
+                    <p>Experience of working with Computer Vision and NLP projects</p>
+                    <p>Complex quantitative modeling for dynamic forecasting and time series analysis</p>
+                </div>
+            </div>
         </div>
     </div>
-</footer>
 </div>
-<script>
-  let sliderImages = document.querySelectorAll(".slide"),
-	arrowLeft = document.querySelector("#arrow-left"),
-	arrowRight = document.querySelector("#arrow-right"),
-	current = 0;
 
-// Clear all images
-function reset() {
-	for (let i = 0; i < sliderImages.length; i++) {
-		sliderImages[i].style.display = "none";
-	}
-}
+    </main>
 
-// Initial slide
-function startSlide() {
-	reset();
-	sliderImages[0].style.display = "block";
-}
-
-// Show previous
-function slideLeft() {
-	reset();
-	sliderImages[current - 1].style.display = "block";
-	current--;
-}
-
-// Show next
-function slideRight() {
-	reset();
-	sliderImages[current + 1].style.display = "block";
-	current++;
-}
-
-// Left arrow click
-arrowLeft.addEventListener("click", function () {
-	if (current === 0) {
-		current = sliderImages.length;
-	}
-	slideLeft();
-});
-
-// Right arrow click
-arrowRight.addEventListener("click", function () {
-	if (current === sliderImages.length - 1) {
-		current = -1;
-	}
-	slideRight();
-});
-
-startSlide();
-
-
-</script>
+    <footer>
+        <div class="container">
+            <ul class="social-links">
+                <li><a href="https://github.com/ManaviP"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/manavi-p-576a8b279/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto:manavimunnuraya11@gmail.com" class="social-icon" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a></li>
+                <li><a href="https://www.instagram.com/._manavi._?igsh=MWw2Nzhjc2hwd284dg=="><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
