@@ -14,29 +14,29 @@ body {
 /* Header Styles */
 header {
     background-color: #222;
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
     border-bottom: 2px solid #555;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Added shadow for better visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
-    max-width: 100%; /* Changed to ensure full width */
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    flex-wrap: wrap;
 }
 
 header h1 a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem; /* Adjusted for better fit on mobile */
+    font-size: 1.5rem;
 }
 
 nav ul {
@@ -44,8 +44,8 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 10px; /* Reduced gap */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -55,7 +55,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.9rem; /* Adjusted font size for mobile */
+    font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
@@ -66,36 +66,38 @@ nav ul li a:hover {
 /* Container and Timeline Styles */
 .container {
     display: flex;
-    justify-content: space-between; /* Ensure space between timeline and content */
-    padding: 100px 20px 20px; /* Adjusted top padding */
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding-top: calc(100px + 20px); /* Ensure content is visible below fixed header */
+    justify-content: space-between;
+    padding: 100px 20px 20px;
+    overflow-y: auto;
+    padding-top: calc(100px + 20px);
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
 }
 
 .timeline {
     position: relative;
-    width: 30%; /* Set width for the timeline */
+    width: 100%; /* Full width for mobile */
+    max-width: 100%; /* Ensure it doesn't overflow */
     padding: 20px;
     background-color: #222;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.7); /* Added glow effect */
-    margin-right: 20px; /* Space between timeline and content */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px; /* Margin at the bottom for separation */
 }
 
 .timeline-line {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: calc(100% + 10px);
     width: 2px;
-    height: 100%;
+    height: calc(100% - 40px);
     background-color: #555;
-    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     z-index: 0;
 }
 
 .timeline-item {
     position: relative;
-    width: calc(100% - 40px); /* Adjust width to fit within timeline */
+    width: 100%; /* Full width for mobile */
     padding: 15px;
     border-radius: 10px;
     background-color: #333;
@@ -106,30 +108,21 @@ nav ul li a:hover {
 }
 
 .timeline-item.left {
-    float: left;
-    clear: both;
-    margin-right: 10px;
+    margin-right: 0; /* Remove margin for mobile */
 }
 
 .timeline-item.right {
-    float: right;
-    clear: both;
-    margin-left: 10px;
-}
-
-.timeline-item.left::before,
-.timeline-item.right::before {
-    display: none; /* Hide timeline dots on small screens */
+    margin-left: 0; /* Remove margin for mobile */
 }
 
 .timeline-end-icon {
     position: absolute;
-    bottom: -20px; /* Adjusted position to ensure visibility */
-    left: 50%;
+    bottom: -20px;
+    left: 100%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
     z-index: 1;
-    width: 35px; /* Adjusted size */
+    width: 35px;
     height: 35px;
 }
 
@@ -140,7 +133,7 @@ nav ul li a:hover {
 
 /* Content Styles */
 .content {
-    width: 65%; /* Set width for content area */
+    width: 100%; /* Full width for mobile */
     padding: 20px;
     background-color: #333;
     border-radius: 10px;
@@ -151,31 +144,31 @@ nav ul li a:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 10px; /* Reduced padding */
+        padding: 10px;
     }
 
     header h1 a {
-        font-size: 1.5rem; /* Adjusted font size for mobile */
+        font-size: 1.5rem;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 10px; /* Reduced gap */
+        gap: 10px;
     }
 
     .container {
-        flex-direction: column; /* Stack timeline and content vertically on small screens */
-        padding-top: 100px; /* Adjusted for fixed header */
+        flex-direction: column;
+        padding-top: 100px;
     }
 
     .timeline {
         width: 100%;
-        margin-bottom: 20px; /* Margin to separate from content */
+        margin-bottom: 20px;
     }
 
     .content {
-        width: 100%; /* Full width for mobile */
+        width: 100%;
     }
 
     .timeline-end-icon {
@@ -186,19 +179,19 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     header {
-        padding: 5px; /* Further reduced padding */
+        padding: 5px;
     }
 
     header h1 a {
-        font-size: 1.2rem; /* Further adjusted font size */
+        font-size: 1.2rem;
     }
 
     nav ul li a {
-        font-size: 0.9rem; /* Adjusted font size for better fit */
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
     }
 
     .timeline-item {
-        padding: 10px; /* Adjusted padding for mobile */
+        padding: 10px;
     }
 
     .timeline-end-icon {
