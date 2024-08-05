@@ -63,6 +63,7 @@ nav ul li.active a {
 }
 
 /* Timeline Styles */
+/* Timeline Styles */
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -81,10 +82,11 @@ nav ul li.active a {
     left: 50%;
     width: 10px; /* Increased width for better visibility */
     height: 100%;
-    background-color: #555;
+    background-color: #646262;
     transform: translateX(-50%);
     z-index: 0;
 }
+
 
 /* Timeline Item Styles */
 .timeline-item {
@@ -169,11 +171,20 @@ nav ul li.active a {
     background-color: #F2CE7B;
     transform: translateX(-50%);
     z-index: 1; /* Ensure it's on top of other elements */
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     display: flex; /* Center icon if it has an image */
     align-items: center; /* Center image vertically */
     justify-content: center; /* Center image horizontally */
+    border-radius: 50%; /* Ensure it’s a perfect circle */
+    overflow: hidden; /* Hide overflow of image */
+}
+
+/* Icon Image Styles */
+.timeline-end-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the container */
 }
 
 /* Responsive Styles */
