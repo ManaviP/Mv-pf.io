@@ -1,14 +1,4 @@
-/* General Styles */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
+/* Base Styles */
 body {
   background-color: #111;
   color: #fff;
@@ -30,6 +20,7 @@ header .hcontainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 header h1 a {
@@ -44,6 +35,7 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 nav ul li {
@@ -72,10 +64,12 @@ main {
   justify-content: space-between;
   margin-bottom: 40px;
   width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .hero-content {
   flex: 1;
+  margin-right: 20px; /* Add spacing between content and image */
 }
 
 .hero-content h2 {
@@ -91,10 +85,12 @@ main {
 .hero-image {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .hero-image img {
-  width: 600px; /* Adjust the size as needed */
+  width: 100%; /* Ensure image is responsive */
+  max-width: 600px; /* Limit image size */
   height: auto;
   animation: float 3s ease-in-out infinite;
 }
@@ -113,35 +109,35 @@ main {
 }
 
 .social-icons {
-  margin-top: 20px; /* Space above social icons */
+  margin-top: 20px;
 }
 
 .social-icons a {
-  color: #fff; /* White color for icons */
-  text-decoration: none; /* Remove underline */
-  font-size: 2rem; /* Size of the icons */
-  margin: 0 10px; /* Space between icons */
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0 10px;
 }
 
 .social-icons a:hover {
-  color: #f39c12; /* Hover color for icons */
+  color: #f39c12;
 }
 
 .skill-wrapper {
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   transition: box-shadow 0.3s ease-in-out;
-  text-align: center; /* Center content inside the wrapper */
+  text-align: center;
 }
 
 .skill-wrapper:hover {
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
 }
 
 .skill {
   width: 100%;
-  margin-top: 60px; /* Add space between social icons and skill section */
+  margin-top: 60px;
 }
 
 .header {
@@ -150,8 +146,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #444;
-  margin-bottom: 40px; /* Space between header and skill cards */
-  display: inline-block; /* Center align the header */
+  margin-bottom: 40px;
+  display: inline-block;
 }
 
 .header h2 {
@@ -174,7 +170,7 @@ main {
   width: 100px;
   height: 100px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative; /* To position the glow effect */
+  position: relative;
 }
 
 .skill-card::before {
@@ -186,19 +182,19 @@ main {
   height: 100%;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
 .skill-card:hover::before {
-  opacity: 1; /* Show glow effect on hover */
+  opacity: 1;
 }
 
 .skill-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Light illumination effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .skill-card img {
@@ -240,19 +236,19 @@ footer {
   background-color: #282c34;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   transition: box-shadow 0.3s ease-in-out;
-  margin-bottom: 40px; /* Space between sections */
+  margin-bottom: 40px;
 }
 
 .card-wrapper:hover {
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
 }
 
 /* Skills Section Styling */
 .skills-card-wrapper {
   width: 100%;
-  text-align: center; /* Center align content */
+  text-align: center;
 }
 
 .skills-card-wrapper .header h2 {
@@ -283,34 +279,34 @@ footer {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex; /* Align items horizontally */
-  align-items: center; /* Center vertically */
+  display: flex;
+  align-items: center;
   gap: 20px;
-  opacity: 0; /* Start hidden for animation */
-  transform: translateX(100px); /* Start from right for animation */
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
-  animation: fadeInUp 0.6s forwards; /* Animation effect */
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  animation: fadeInUp 0.6s forwards;
 }
 
 .content-card-image {
   flex: 1;
-  opacity: 0; /* Start hidden for animation */
-  transform: translateX(-100px); /* Start from left for animation */
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .content-card-image img {
-  width: 240px; /* Adjust size as needed */
+  width: 240px;
   height: auto;
   border-radius: 8px;
 }
 
 .content-card-text {
   flex: 2;
-  text-align: left; /* Align text to the left */
-  opacity: 0; /* Start hidden for animation */
-  transform: translateX(100px); /* Start from right for animation */
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+  text-align: left;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .content-card h3 {
@@ -341,10 +337,62 @@ footer {
   }
 }
 
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.content-card-image {
+  animation: slideInFromLeft 0.6s forwards;
+}
+
+.content-card-text {
+  animation: slideInFromRight 0.6s forwards;
+}
+
+/* Resume Button Styles */
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #f2ce7b;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.resume-button:hover {
+  background: #e1b16a;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .container {
-    padding: 10px;
+  header .hcontainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
   }
 
   .hero {
@@ -352,9 +400,8 @@ footer {
     text-align: center;
   }
 
-  .hero-image img {
-    width: 100%;
-    max-width: 100%;
+  .hero-content {
+    margin-right: 0;
   }
 
   .skill-cards {
@@ -362,55 +409,7 @@ footer {
     align-items: center;
   }
 
-  .skill-card {
-    width: 80px;
-    height: 80px;
-  }
-
-  .content-card {
+  .content-cards {
     flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .content-card-image img {
-    width: 100%;
-    max-width: 240px;
-  }
-
-  .content-card-text {
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .skill-card {
-    width: 60px;
-    height: 60px;
-  }
-
-  .content-card {
-    padding: 10px;
-    gap: 5px;
-  }
-
-  .content-card-image img {
-    width: 100%;
-  }
-
-  .content-card-text h3 {
-    font-size: 1.2rem;
-  }
-
-  .content-card-text p {
-    font-size: 0.9rem;
   }
 }
