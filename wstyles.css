@@ -43,6 +43,7 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 20px;
+    margin-left: auto; /* Push navigation to the right */
 }
 
 nav ul li {
@@ -193,13 +194,14 @@ nav ul li a:hover {
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Center navigation items */
         gap: 10px;
+        margin-left: 0; /* Center navigation in mobile view */
     }
 
     .container {
         flex-direction: column;
-        padding-top: 100px; /* Adjust padding for smaller screens */
+        padding-top: 120px; /* Adjust padding for smaller screens */
     }
 
     .timeline {
