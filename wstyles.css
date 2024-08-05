@@ -84,7 +84,7 @@ nav ul li a:hover {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-top: 60px; /* To avoid overlap with fixed header */
+    padding-top: 80px; /* Adjust padding to account for fixed header */
 }
 
 /* Timeline Line Styles */
@@ -177,7 +177,7 @@ nav ul li a:hover {
 /* Hourglass Icon Styles */
 .timeline-end-icon {
     position: absolute;
-    bottom: 0px; /* Position below the timeline */
+    bottom: -22px; /* Position below the timeline */
     left: 50%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
@@ -215,7 +215,7 @@ nav ul li a:hover {
 
     .timeline {
         padding: 10px;
-        margin-top: 80px; /* To avoid overlap with fixed header */
+        margin-top: 100px; /* To avoid overlap with fixed header */
     }
 
     .timeline-line {
