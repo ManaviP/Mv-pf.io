@@ -94,7 +94,7 @@ main {
 }
 
 .hero-image img {
-  width: 450px; /* Adjust the size as needed */
+  width: 600px; /* Adjust the size as needed */
   height: auto;
   animation: float 3s ease-in-out infinite;
 }
