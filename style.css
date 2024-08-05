@@ -73,12 +73,12 @@ main {
 }
 
 .hero-content h2 {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Adjusted for smaller screens */
   margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Adjusted for smaller screens */
   line-height: 1.6;
 }
 
@@ -90,7 +90,7 @@ main {
 
 .hero-image img {
   width: 100%; /* Ensure image is responsive */
-  max-width: 600px; /* Limit image size */
+  max-width: 100%; /* Remove fixed max-width */
   height: auto;
   animation: float 3s ease-in-out infinite;
 }
@@ -115,7 +115,7 @@ main {
 .social-icons a {
   color: #fff;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Adjusted for smaller screens */
   margin: 0 10px;
 }
 
@@ -167,8 +167,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Adjusted for smaller screens */
+  height: 80px; /* Adjusted for smaller screens */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
 }
@@ -198,8 +198,8 @@ main {
 }
 
 .skill-card img {
-  width: 50px;
-  height: 50px;
+  width: 40px; /* Adjusted for smaller screens */
+  height: 40px; /* Adjusted for smaller screens */
 }
 
 .skill-card h4 {
@@ -296,7 +296,7 @@ footer {
 }
 
 .content-card-image img {
-  width: 240px;
+  width: 200px; /* Adjusted for smaller screens */
   height: auto;
   border-radius: 8px;
 }
@@ -368,13 +368,11 @@ footer {
 }
 
 /* Resume Button Styles */
-
-/* Resume Button Styles */
 .resume-button {
   display: inline-block;
   padding: 10px 20px;
   margin-top: 20px;
-  background-color: #F2CE7B;;
+  background-color: #F2CE7B;
   color: #111;
   text-decoration: none;
   font-size: 1rem;
@@ -383,10 +381,10 @@ footer {
 }
 
 .resume-button:hover {
-  background-color: #f6bd39;;
+  background-color: #f6bd39;
   color: #fff;
 }
-/* Splash Screen Styling */
+
 /* Splash Screen Styling */
 .splash-screen {
   position: fixed;
@@ -404,8 +402,8 @@ footer {
 
 /* Video Styling */
 #splashVideo {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   object-fit: cover; /* Ensures video covers the screen */
 }
 
@@ -442,5 +440,51 @@ footer {
 
   .content-cards {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 a {
+    font-size: 1.5rem; /* Smaller font size for very small screens */
+  }
+
+  nav ul li a {
+    font-size: 0.9rem; /* Smaller font size for very small screens */
+  }
+
+  .hero-content h2 {
+    font-size: 2rem; /* Smaller font size for very small screens */
+  }
+
+  .hero-content p {
+    font-size: 0.9rem; /* Smaller font size for very small screens */
+  }
+
+  .social-icons a {
+    font-size: 1.2rem; /* Smaller icons for very small screens */
+  }
+
+  .skill-card {
+    width: 60px; /* Adjusted size for smaller screens */
+    height: 60px; /* Adjusted size for smaller screens */
+  }
+
+  .skill-card img {
+    width: 30px; /* Adjusted icon size for smaller screens */
+    height: 30px; /* Adjusted icon size for smaller screens */
+  }
+
+  .content-card {
+    flex-direction: column; /* Stack content vertically for smaller screens */
+    text-align: center; /* Center text */
+  }
+
+  .content-card-image img {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Limit maximum width */
+  }
+
+  .content-card-text {
+    text-align: center; /* Center text */
   }
 }
