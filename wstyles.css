@@ -14,29 +14,27 @@ body {
 /* Header Styles */
 header {
     background-color: #222;
-    padding: 10px;
+    padding: 20px;
     border-bottom: 2px solid #555;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
-    max-width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 header h1 a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 nav ul {
@@ -44,9 +42,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 10px;
-    flex-wrap: nowrap; /* Prevent wrapping for nav items */
-    justify-content: flex-end; /* Align nav items to the right */
+    gap: 20px;
 }
 
 nav ul li {
@@ -56,7 +52,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
@@ -67,71 +63,117 @@ nav ul li a:hover {
 /* Container and Timeline Styles */
 .container {
     display: flex;
-    justify-content: space-between;
-    padding: 100px 20px 20px;
-    overflow-y: auto;
-    padding-top: calc(100px + 20px);
-    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    padding: 160px 20px 20px; /* Add more top padding to account for fixed header height */
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .timeline {
     position: relative;
-    width: 100%; /* Full width for mobile */
-    max-width: 100%; /* Ensure it doesn't overflow */
+    max-width: 1200px;
+    width: 100%;
     padding: 20px;
-    background-color: #222;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px; /* Margin at the bottom for separation */
+    overflow: hidden;
 }
 
+/* Timeline Line Styles */
 .timeline-line {
     position: absolute;
     top: 0;
-    left: calc(100% + 10px); /* Adjust position to the right of the timeline */
-    width: 4px; /* Thicker timeline line */
-    height: calc(100% - 40px);
+    left: 50%;
+    width: 4px; /* Increased width for better visibility */
+    height: 100%;
     background-color: #555;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
     z-index: 0;
 }
 
+/* Timeline Item Styles */
 .timeline-item {
     position: relative;
     width: 100%; /* Full width for mobile */
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     color: #fff;
     margin-bottom: 20px;
+    clear: both;
+    z-index: 1;
     animation: slide-in 1s ease-in-out;
 }
 
-/* Only the left cards should have a glowing effect */
+/* Styles for Left and Right Timeline Items */
 .timeline-item.left {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Enhanced glow effect for left cards */
-    margin-right: 0; /* Remove margin for mobile */
+    float: left;
+    margin-right: 50%; /* Adjust to ensure proper spacing */
 }
 
 .timeline-item.right {
-    margin-left: 0; /* Remove margin for mobile */
+    float: right;
+    margin-left: 50%; /* Adjust to ensure proper spacing */
 }
 
-.timeline-item.left::before,
+.timeline-item.left::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
 .timeline-item.right::before {
-    display: none; /* Hide timeline dots on small screens */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #555;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
+.timeline-item h2,
+.timeline-item h3 {
+    margin-top: 0;
+}
+
+.timeline-item p {
+    margin-bottom: 0;
+}
+
+.timeline-item .skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.timeline-item .skills span {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+/* Hourglass Icon Styles */
 .timeline-end-icon {
     position: absolute;
-    bottom: -20px;
-    left: 100%;
+    bottom: 0px; /* Position below the timeline */
+    left: 50%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
     z-index: 1;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
 }
 
 .timeline-end-icon img {
@@ -139,20 +181,10 @@ nav ul li a:hover {
     height: 100%;
 }
 
-/* Content Styles */
-.content {
-    width: 100%; /* Full width for mobile */
-    padding: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    color: #fff;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 10px;
+        padding: 15px;
     }
 
     header h1 a {
@@ -160,23 +192,34 @@ nav ul li a:hover {
     }
 
     nav ul {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
-        justify-content: flex-end; /* Keep nav items aligned to the right */
     }
 
     .container {
         flex-direction: column;
-        padding-top: 100px;
+        padding-top: 100px; /* Adjust padding for smaller screens */
     }
 
     .timeline {
-        width: 100%;
-        margin-bottom: 20px;
+        padding: 10px;
     }
 
-    .content {
+    .timeline-line {
+        width: 3px; /* Adjusted width for mobile */
+    }
+
+    .timeline-item {
         width: 100%;
+        padding: 15px;
+        margin: 10px 0; /* Adjusted margin */
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        float: none; /* Ensure full-width on mobile */
+        margin: 0;
     }
 
     .timeline-end-icon {
@@ -187,7 +230,7 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     header {
-        padding: 5px;
+        padding: 10px;
     }
 
     header h1 a {
@@ -195,7 +238,7 @@ nav ul li a:hover {
     }
 
     nav ul li a {
-        font-size: 0.8rem; /* Adjust font size for smaller screens */
+        font-size: 0.9rem;
     }
 
     .timeline-item {
