@@ -91,9 +91,9 @@ section {
 }
 
 .card-imag img {
-  width: 70%;
+  width: 100%;
   height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
+  object-fit: cover; /* Ensure image covers container */
 }
 
 .card-detail {
@@ -285,8 +285,13 @@ h2 {
     flex-direction: column;
   }
 
+  .card-imag {
+    flex: none; /* Allow image to adjust with its container */
+  }
+
   .card-imag img {
-    height: 200px; /* Set a fixed height for images in training cards */
+    width: 100%; /* Ensure the image covers the width */
+    height: auto; /* Maintain aspect ratio */
   }
 
   .card-detail {
