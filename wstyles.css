@@ -164,7 +164,7 @@ nav ul li.active a {
 /* Hourglass Icon Styles */
 .timeline-end-icon {
     position: absolute;
-    bottom: -22px; /* Position below the timeline */
+    bottom: -1px; /* Adjusted to ensure visibility */
     left: 50%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
@@ -176,17 +176,12 @@ nav ul li.active a {
     justify-content: center; /* Center image horizontally */
 }
 
-.timeline-end-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Adjust if the image is not fitting well */
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
     .timeline-end-icon {
         width: 35px;
         height: 35px;
+        bottom: -25px; /* Adjusted for mobile */
     }
 }
 
@@ -194,6 +189,7 @@ nav ul li.active a {
     .timeline-end-icon {
         width: 30px;
         height: 30px;
+        bottom: -20px; /* Adjusted for mobile */
     }
 }
 
