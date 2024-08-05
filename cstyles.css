@@ -12,6 +12,9 @@ header {
   background-color: #222;
   padding: 20px;
   border-bottom: 2px solid #555;
+  display: flex; /* Flexbox for header layout */
+  justify-content: space-between; /* Space between title and nav */
+  align-items: center;
 }
 
 header .container {
@@ -20,12 +23,19 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%; /* Ensure container takes full width */
 }
 
 header h1 a {
   color: #fff;
   text-decoration: none;
   font-size: 2rem;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -163,5 +173,50 @@ p {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack header items vertically */
+  }
+
+  nav {
+    width: 100%; /* Make nav take full width */
+    text-align: center; /* Center-align nav items */
+    margin-top: 20px; /* Space between title and nav */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 10px;
+  }
+
+  nav ul li {
+    display: block; /* Display nav items as blocks */
+  }
+
+  .contact-content {
+    max-width: 100%; /* Full width for contact content */
+  }
+
+  .animated-graphic img {
+    width: 100%; /* Ensure graphic fits container */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 a {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 }
