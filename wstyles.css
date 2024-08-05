@@ -161,21 +161,42 @@ nav ul li.active a {
 }
 
 /* Hourglass Icon Styles */
+/* Hourglass Icon Styles */
 .timeline-end-icon {
     position: absolute;
     bottom: -22px; /* Position below the timeline */
     left: 50%;
     background-color: #F2CE7B;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 1; /* Ensure it's on top of other elements */
     width: 45px;
     height: 45px;
+    display: flex; /* Center icon if it has an image */
+    align-items: center; /* Center image vertically */
+    justify-content: center; /* Center image horizontally */
 }
 
 .timeline-end-icon img {
     width: 100%;
     height: 100%;
+    object-fit: contain; /* Adjust if the image is not fitting well */
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .timeline-end-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-end-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
