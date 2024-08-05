@@ -1,4 +1,14 @@
-/* Base Styles (for larger screens) */
+/* General Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 body {
   background-color: #111;
   color: #fff;
@@ -7,6 +17,7 @@ body {
   padding: 0;
 }
 
+/* Header Styles */
 header {
   background-color: #222;
   padding: 20px;
@@ -83,7 +94,7 @@ main {
 }
 
 .hero-image img {
-  width: 600px;
+  width: 600px; /* Adjust the size as needed */
   height: auto;
   animation: float 3s ease-in-out infinite;
 }
@@ -102,35 +113,35 @@ main {
 }
 
 .social-icons {
-  margin-top: 20px;
+  margin-top: 20px; /* Space above social icons */
 }
 
 .social-icons a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 2rem;
-  margin: 0 10px;
+  color: #fff; /* White color for icons */
+  text-decoration: none; /* Remove underline */
+  font-size: 2rem; /* Size of the icons */
+  margin: 0 10px; /* Space between icons */
 }
 
 .social-icons a:hover {
-  color: #f39c12;
+  color: #f39c12; /* Hover color for icons */
 }
 
 .skill-wrapper {
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
   transition: box-shadow 0.3s ease-in-out;
-  text-align: center;
+  text-align: center; /* Center content inside the wrapper */
 }
 
 .skill-wrapper:hover {
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
 }
 
 .skill {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 60px; /* Add space between social icons and skill section */
 }
 
 .header {
@@ -139,8 +150,8 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #444;
-  margin-bottom: 40px;
-  display: inline-block;
+  margin-bottom: 40px; /* Space between header and skill cards */
+  display: inline-block; /* Center align the header */
 }
 
 .header h2 {
@@ -163,7 +174,7 @@ main {
   width: 100px;
   height: 100px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative;
+  position: relative; /* To position the glow effect */
 }
 
 .skill-card::before {
@@ -175,19 +186,19 @@ main {
   height: 100%;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
 .skill-card:hover::before {
-  opacity: 1;
+  opacity: 1; /* Show glow effect on hover */
 }
 
 .skill-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Light illumination effect */
 }
 
 .skill-card img {
@@ -224,75 +235,131 @@ footer {
   font-size: 1.5rem;
 }
 
-/* Splash Screen */
-.splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.splash-screen img {
-  width: 150px;
-  height: auto;
-}
-
-.splash-screen.hidden {
-  display: none;
-}
-
 /* Overall Card Styling */
 .card-wrapper {
   background-color: #282c34;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Glowing effect */
   transition: box-shadow 0.3s ease-in-out;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Space between sections */
 }
 
 .card-wrapper:hover {
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.7); /* Enhanced glow on hover */
 }
 
 /* Skills Section Styling */
 .skills-card-wrapper {
   width: 100%;
+  text-align: center; /* Center align content */
+}
+
+.skills-card-wrapper .header h2 {
+  margin: 0;
+}
+
+/* What I Do Section Styling */
+.what-i-do-card-wrapper {
+  width: 100%;
   text-align: center;
 }
 
-.skills-card-wrapper .header {
+.what-i-do-card-wrapper .header {
   margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #444;
 }
 
-/* Mobile Responsiveness */
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Content Card Styles */
+.content-card {
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+  animation: fadeInUp 0.6s forwards; /* Animation effect */
+}
+
+.content-card-image {
+  flex: 1;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(-100px); /* Start from left for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card-image img {
+  width: 240px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+}
+
+.content-card-text {
+  flex: 2;
+  text-align: left; /* Align text to the left */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(100px); /* Start from right for animation */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Animation timing */
+}
+
+.content-card h3 {
+  margin-top: 0;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-start;
+}
+
+.icon img {
+  width: 34px;
+  height: auto;
+}
+
+.description p {
+  margin: 5px 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  header .hcontainer {
-    flex-direction: column;
-    align-items: flex-start;
+  .container {
+    padding: 10px;
   }
-  
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
+
   .hero {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
-  
+
   .hero-image img {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
+  }
+
+  .skill-cards {
+    flex-direction: column;
+    align-items: center;
   }
 
   .skill-card {
@@ -300,46 +367,50 @@ footer {
     height: 80px;
   }
 
-  .skill-card img {
-    width: 40px;
-    height: 40px;
-  }
-
   .content-card {
     flex-direction: column;
-    align-items: center;
     text-align: center;
+    gap: 10px;
   }
 
   .content-card-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 240px;
   }
 
-  .social-icons a {
-    font-size: 1.5rem;
-    margin: 0 5px;
-  }
-
-  .card-wrapper {
-    padding: 10px;
-  }
-
-  footer {
-    font-size: 0.9rem;
+  .content-card-text {
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  header h1 a {
-    font-size: 1.5rem;
-  }
-
   .hero-content h2 {
     font-size: 2rem;
   }
 
   .hero-content p {
     font-size: 1rem;
+  }
+
+  .skill-card {
+    width: 60px;
+    height: 60px;
+  }
+
+  .content-card {
+    padding: 10px;
+    gap: 5px;
+  }
+
+  .content-card-image img {
+    width: 100%;
+  }
+
+  .content-card-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .content-card-text p {
+    font-size: 0.9rem;
   }
 }
