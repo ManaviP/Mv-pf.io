@@ -71,6 +71,7 @@ section {
 .training-card {
   background-color: #222;
   border-radius: 10px;
+  display: flex; /* Use flexbox to align image and details side by side */
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
   transition: box-shadow 0.3s ease;
@@ -78,6 +79,30 @@ section {
 
 .training-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.card-imag {
+  flex: 1; /* Allow image to take up equal space */
+}
+
+.card-imag img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+}
+
+.card-detail {
+  flex: 2; /* Allow text to take up more space */
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Background with some transparency */
+}
+
+.card-descriptio {
+  font-size: 1rem;
+  margin: 0;
 }
 
 /* Achievements Section Styles */
@@ -218,45 +243,64 @@ h2 {
   font-size: 1rem;
   margin: 0;
 }
-/* Training Section Styles */
-#training {
-  background: linear-gradient(135deg, #333, #444);
-  border: 2px solid #555;
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  .achievement-card,
+  .project-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-detail,
+  .card-descriptio {
+    font-size: 0.9rem;
+  }
+
+  #training .training-card {
+    flex-direction: column;
+  }
+
+  .card-imag img {
+    height: 200px; /* Set a fixed height for images in training cards */
+  }
+
+  .card-detail {
+    padding: 15px;
+  }
 }
 
-.training-card {
-  background-color: #222;
-  border-radius: 10px;
-  display: flex; /* Use flexbox to align image and details side by side */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
-  transition: box-shadow 0.3s ease;
-}
+@media (max-width: 480px) {
+  header h1 a {
+    font-size: 1.5rem;
+  }
 
-.training-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
-}
+  h2 {
+    font-size: 1.5rem;
+  }
 
-.card-imag {
-  flex: 1; /* Allow image to take up equal space */
-}
+  .achievement-card,
+  .project-card {
+    width: 100%;
+    height: auto;
+  }
 
-.card-imag img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-}
-
-.card-detail {
-  flex: 2; /* Allow text to take up more space */
-  padding: 20px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.7); /* Background with some transparency */
-}
-
-.card-descriptio {
-  font-size: 1rem;
-  margin: 0;
+  .card-detail,
+  .card-descriptio {
+    font-size: 0.8rem;
+  }
 }
