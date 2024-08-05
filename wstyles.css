@@ -45,7 +45,8 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping for nav items */
+    justify-content: flex-end; /* Align nav items to the right */
 }
 
 nav ul li {
@@ -87,8 +88,8 @@ nav ul li a:hover {
 .timeline-line {
     position: absolute;
     top: 0;
-    left: calc(100% + 10px);
-    width: 2px;
+    left: calc(100% + 10px); /* Adjust position to the right of the timeline */
+    width: 4px; /* Thicker timeline line */
     height: calc(100% - 40px);
     background-color: #555;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
@@ -107,12 +108,19 @@ nav ul li a:hover {
     animation: slide-in 1s ease-in-out;
 }
 
+/* Only the left cards should have a glowing effect */
 .timeline-item.left {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Enhanced glow effect for left cards */
     margin-right: 0; /* Remove margin for mobile */
 }
 
 .timeline-item.right {
     margin-left: 0; /* Remove margin for mobile */
+}
+
+.timeline-item.left::before,
+.timeline-item.right::before {
+    display: none; /* Hide timeline dots on small screens */
 }
 
 .timeline-end-icon {
@@ -152,9 +160,9 @@ nav ul li a:hover {
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
         gap: 10px;
+        justify-content: flex-end; /* Keep nav items aligned to the right */
     }
 
     .container {
