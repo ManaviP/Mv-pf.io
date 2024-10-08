@@ -93,6 +93,7 @@ main {
   width: 100%; /* Ensure image is responsive */
   max-width: 100%; /* Remove fixed max-width */
   height: auto;
+  border-radius:50%;
   animation: float 3s ease-in-out infinite;
 }
 
