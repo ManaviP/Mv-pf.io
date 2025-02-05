@@ -10,9 +10,9 @@
     <!-- Header Section -->
     <header>
         <div class="hcontainer">
-            
-            <nav>
-                <ul>
+           <div class="hamburger" onclick="toggleMenu()">☰</div></div>
+        <nav>
+            <ul id="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li class="active"><a href="work.html">Experience</a></li>
@@ -27,20 +27,20 @@
         <div class="timeline" id="timeline">
             <div class="timeline-line"></div>
             <div class="timeline-item left">
-                <h2>Ecommerce website Developer Intern</h2>
-                <h3>Ajipra industries pvt ltd</h3>
-                <p>Creating ecommerce website of company which makes customer avail the products easily ensuring security with the original price.</p>
+                <h2>full stack Developer Intern</h2>
+                <h3>Geekbase technnology</h3>
+                <p>Collaborated in a diverse team to developed responsive frontends using React and Redux, engineered complex backend
+processes for secure data flow, automated API workflow testing using Postman for reliability and worked in a diverse team
+environment to deliver quality solutions(MERN).</p>
                 <div class="skills">
-                    <span>Stripe</span>
+                    <span>Postman</span>
                     <span>ReactJS</span>
-                    <span>Firebase</span>
-                    <span>JavaScript</span>
-                    <span>Bootstrap</span>
+                    <span>MySQL</span>
+                    <span>ExpressJS</span>
                     <span>NodeJS</span>
                     <span>CSS</span>
-                    <span>HTML</span>
                 </div>
-                <p>7.2023 - present</p>
+                <p>20.9.2024 - 20.11.2024</p>
             </div>
             <!-- Hourglass Icon at the End -->
             <div class="timeline-end-icon">
@@ -49,6 +49,11 @@
         </div>
     </div>
 </body>
+    <script>
+        function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("nav-active");
+}
+    </script>
 </html>
 
 <!-- <div class="timeline-item right">
