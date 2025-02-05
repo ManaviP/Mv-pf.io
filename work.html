@@ -10,9 +10,10 @@
     <!-- Header Section -->
     <header>
         <div class="hcontainer">
-            
-            <nav>
-                <ul>
+           
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul id="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li class="active"><a href="work.html">Experience</a></li>
@@ -27,7 +28,7 @@
         <div class="timeline" id="timeline">
             <div class="timeline-line"></div>
             <div class="timeline-item left">
-                <h2>full stack Developer Intern</h2>
+                <h2>Full Stack Developer Intern</h2>
                 <h3>Geekbase Technology</h3>
                 <p>Collaborated in a diverse team to developed responsive frontends using React and Redux, engineered complex backend
 processes for secure data flow, automated API workflow testing using Postman for reliability and worked in a diverse team
@@ -50,6 +51,11 @@ environment to deliver quality solutions(MERN).</p>
         </div>
     </div>
 </body>
+<script>
+    function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("nav-active");
+    }
+</script>
 </html>
 
 <!-- <div class="timeline-item right">
