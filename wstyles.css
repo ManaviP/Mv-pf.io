@@ -186,7 +186,10 @@ nav ul li.active a {
     height: 100%;
     object-fit: contain; /* Ensure the image fits within the container */
 }
-
+.hamburger {
+    display: none; /* Initially hidden */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
     .timeline-end-icon {
@@ -218,12 +221,25 @@ nav ul li.active a {
     nav {
         text-align: center; /* Center align nav items */
     }
+    
+    .hamburger {
+        display: block; /* Show hamburger menu */
+        margin-bottom: 10px; /* Space below the hamburger */
+        margin-left: auto; /* Align hamburger to the right */
+    }
+
+    header nav ul.nav-active {
+        display: flex; /* Show menu when active */
+    }
 
     nav ul {
         flex-direction: column;
         align-items: center; /* Center navigation items */
         gap: 10px;
-        margin-left: 0; /* Center navigation in mobile view */
+        margin-left: 0; 
+         display: none; /* Hide the menu by default */
+       /* Space between menu items */
+        width: 100%;/* Center navigation in mobile view */
     }
 
     .timeline {
