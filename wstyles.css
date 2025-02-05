@@ -171,8 +171,8 @@ nav ul li.active a {
     background-color: #F2CE7B;
     transform: translateX(-50%);
     z-index: 1; /* Ensure it's on top of other elements */
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     display: flex; /* Center icon if it has an image */
     align-items: center; /* Center image vertically */
     justify-content: center; /* Center image horizontally */
@@ -186,29 +186,15 @@ nav ul li.active a {
     height: 100%;
     object-fit: contain; /* Ensure the image fits within the container */
 }
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .timeline-end-icon {
-        width: 35px;
-        height: 35px;
-        bottom: -1px; /* Adjusted for mobile */
-    }
+.hamburger {
+    display: none; /* Initially hidden */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
-
-@media (max-width: 480px) {
-    .timeline-end-icon {
-        width: 30px;
-        height: 30px;
-        bottom: -1px; /* Adjusted for mobile */
-    }
-}
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding: 15px;
+        padding: 25px;
     }
 
     header h1 a {
@@ -218,12 +204,35 @@ nav ul li.active a {
     nav {
         text-align: center; /* Center align nav items */
     }
+    .hamburger {
+        display: block; /* Show hamburger menu */
+        margin-bottom: 10px; 
+        position: fixed;/* Space below the hamburger */
+        margin-left: 30px; /* Align hamburger to the right */
+    }
+    
+
+    header nav ul.nav-active {
+        display: flex; 
+        flex-direction: column;/* Show menu when active */
+    }
+    .hcontainer{
+        display: flex;
+        flex-direction: row;
+    }
 
     nav ul {
         flex-direction: column;
         align-items: center; /* Center navigation items */
         gap: 10px;
-        margin-left: 0; /* Center navigation in mobile view */
+        margin-left: 0;
+        display: none;  /* Space between menu items */
+        width: 100%;  /* Center navigation in mobile view */
+    }
+    .timeline-end-icon {
+        width: 35px;
+        height: 35px;
+        bottom: -25px; /* Adjusted for mobile */
     }
 
     .timeline {
@@ -247,15 +256,11 @@ nav ul li.active a {
         margin: 0;
     }
 
-    .timeline-end-icon {
-        width: 35px;
-        height: 35px;
-    }
 }
 
 @media (max-width: 480px) {
     header {
-        padding: 10px;
+        padding: 25px;
     }
 
     header h1 a {
@@ -274,5 +279,9 @@ nav ul li.active a {
     .timeline-end-icon {
         width: 30px;
         height: 30px;
+        bottom: -20px; /* Adjusted for mobile */
+    }
+    .timeline-item.left{
+        font-size: 0.7rem;
     }
 }
